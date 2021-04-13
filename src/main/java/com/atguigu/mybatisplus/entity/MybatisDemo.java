@@ -6,7 +6,7 @@ import lombok.Data;
 import java.util.Date;
 
 @Data
-public class User {
+public class MybatisDemo {
 
 //    @TableId(type = IdType.AUTO) // 主键自增
     @TableId(type = IdType.ID_WORKER) // 分布式id生成器，默认

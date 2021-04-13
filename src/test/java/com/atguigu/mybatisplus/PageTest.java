@@ -1,6 +1,6 @@
 package com.atguigu.mybatisplus;
 
-import com.atguigu.mybatisplus.entity.User;
+import com.atguigu.mybatisplus.entity.MybatisDemo;
 import com.atguigu.mybatisplus.mapper.UserMapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.junit.Test;
@@ -19,7 +19,7 @@ public class PageTest {
     @Test
     public void testSelectPage(){
 
-        Page<User> userPage = new Page<>(1, 3);
+        Page<MybatisDemo> userPage = new Page<>(1, 3);
 
         userMapper.selectPage(userPage,null);
 

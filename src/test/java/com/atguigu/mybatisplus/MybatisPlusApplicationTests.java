@@ -1,6 +1,6 @@
 package com.atguigu.mybatisplus;
 
-import com.atguigu.mybatisplus.entity.User;
+import com.atguigu.mybatisplus.entity.MybatisDemo;
 import com.atguigu.mybatisplus.mapper.UserMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -28,7 +28,7 @@ public class MybatisPlusApplicationTests {
 		map.put("name","bbb");
 		map.put("age",20);
 
-		List<User> users = userMapper.selectByMap(map);
+		List<MybatisDemo> users = userMapper.selectByMap(map);
 
 		users.forEach(System.out::println);
 	}
@@ -36,7 +36,7 @@ public class MybatisPlusApplicationTests {
 	@Test
 	public void testSelectBatchIds(){
 
-		List<User> users = userMapper.selectBatchIds(Arrays.asList(1, 2, 3, 4));
+		List<MybatisDemo> users = userMapper.selectBatchIds(Arrays.asList(1, 2, 3, 4));
 
 		users.forEach(System.out::println);
 	}
@@ -44,7 +44,7 @@ public class MybatisPlusApplicationTests {
 	@Test
 	public void testUpdate(){
 
-		User user = new User();
+		MybatisDemo user = new MybatisDemo();
 
 		user.setId(1156820418229760001l);
 		user.setName("bbb");
@@ -55,7 +55,7 @@ public class MybatisPlusApplicationTests {
 	@Test
 	public void testInsert(){
 
-		User user = new User();
+		MybatisDemo user = new MybatisDemo();
 
 		user.setName("aaa");
 		user.setAge(20);
@@ -67,7 +67,7 @@ public class MybatisPlusApplicationTests {
 	@Test
 	public void testUserList() {
 
-		List<User> users = userMapper.selectList(null);
+		List<MybatisDemo> users = userMapper.selectList(null);
 
 		users.forEach(System.out::println);
 	}

@@ -1,6 +1,6 @@
 package com.atguigu.mybatisplus;
 
-import com.atguigu.mybatisplus.entity.User;
+import com.atguigu.mybatisplus.entity.MybatisDemo;
 import com.atguigu.mybatisplus.mapper.UserMapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
@@ -25,7 +25,7 @@ public class QueryWrapperTests {
     @Test
     public void testDelete(){
 
-        QueryWrapper<User> userQueryWrapper = new QueryWrapper<>();
+        QueryWrapper<MybatisDemo> userQueryWrapper = new QueryWrapper<>();
 
         userQueryWrapper.isNull("name")
                 .ge("age",12)
@@ -40,11 +40,11 @@ public class QueryWrapperTests {
     @Test
     public void testSelectOne(){
 
-        QueryWrapper<User> userQueryWrapper = new QueryWrapper<>();
+        QueryWrapper<MybatisDemo> userQueryWrapper = new QueryWrapper<>();
 
         userQueryWrapper.eq("name","Tom");
 
-        User user = userMapper.selectOne(userQueryWrapper);
+        MybatisDemo user = userMapper.selectOne(userQueryWrapper);
 
         System.out.println(user);
     }
@@ -53,7 +53,7 @@ public class QueryWrapperTests {
     @Test
     public void testSelectCount(){
 
-        QueryWrapper<User> userQueryWrapper = new QueryWrapper<>();
+        QueryWrapper<MybatisDemo> userQueryWrapper = new QueryWrapper<>();
 
         userQueryWrapper.notBetween("age",10,20);
 
@@ -66,7 +66,7 @@ public class QueryWrapperTests {
     @Test
     public void testSelectList(){
 
-        QueryWrapper<User> userQueryWrapper = new QueryWrapper<>();
+        QueryWrapper<MybatisDemo> userQueryWrapper = new QueryWrapper<>();
 
         Map<String, Object> map = new HashMap<>();
 
@@ -83,7 +83,7 @@ public class QueryWrapperTests {
     @Test
     public void testSelectMaps(){
 
-        QueryWrapper<User> userQueryWrapper = new QueryWrapper<>();
+        QueryWrapper<MybatisDemo> userQueryWrapper = new QueryWrapper<>();
 
         userQueryWrapper.like("name","e");
         userQueryWrapper.likeRight("email","t");
@@ -98,7 +98,7 @@ public class QueryWrapperTests {
     @Test
     public void testSelectObjs(){
 
-        QueryWrapper<User> userQueryWrapper = new QueryWrapper<>();
+        QueryWrapper<MybatisDemo> userQueryWrapper = new QueryWrapper<>();
 
 //        userQueryWrapper.exists("select * from user where age = 20");
 //        userQueryWrapper.in("id",1,2,3,4);
@@ -114,12 +114,12 @@ public class QueryWrapperTests {
     @Test
     public void testUpdate1(){
 
-        User user = new User();
+        MybatisDemo user = new MybatisDemo();
 
         user.setAge(99);
         user.setName("Andy");
 
-        UpdateWrapper<User> updateWrapper = new UpdateWrapper<>();
+        UpdateWrapper<MybatisDemo> updateWrapper = new UpdateWrapper<>();
 
         updateWrapper.like("name","h")
                 .or()
@@ -132,12 +132,12 @@ public class QueryWrapperTests {
     @Test
     public void testUpdate2(){
 
-        User user = new User();
+        MybatisDemo user = new MybatisDemo();
 
         user.setAge(99);
         user.setName("Andy");
 
-        UpdateWrapper<User> updateWrapper = new UpdateWrapper<>();
+        UpdateWrapper<MybatisDemo> updateWrapper = new UpdateWrapper<>();
 
         updateWrapper.like("name","h")
                 .or(i -> i.eq("name","李白").ne("age",20));
@@ -151,14 +151,14 @@ public class QueryWrapperTests {
     @Test
     public void testSelectListOrderBy(){
 
-        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+        QueryWrapper<MybatisDemo> queryWrapper = new QueryWrapper<>();
 
         // condition：是否启用排序 isAsc：是否是升序
 //        queryWrapper.orderBy(false,true,"age");
 //        queryWrapper.orderByAsc("age"); // 升序排列
         queryWrapper.orderByDesc("age"); // 降序排列
 
-        List<User> users = userMapper.selectList(queryWrapper);
+        List<MybatisDemo> users = userMapper.selectList(queryWrapper);
 
         users.forEach(System.out::println);
     }
@@ -167,11 +167,11 @@ public class QueryWrapperTests {
     @Test
     public void testSelectListLast(){
 
-        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+        QueryWrapper<MybatisDemo> queryWrapper = new QueryWrapper<>();
 
         queryWrapper.last("limit 1");
 
-        List<User> users = userMapper.selectList(queryWrapper);
+        List<MybatisDemo> users = userMapper.selectList(queryWrapper);
 
         users.forEach(System.out::println);
     }
@@ -180,7 +180,7 @@ public class QueryWrapperTests {
     @Test
     public void testSelectListColumn(){
 
-        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+        QueryWrapper<MybatisDemo> queryWrapper = new QueryWrapper<>();
 
         queryWrapper.select("id","name","age");
 
@@ -193,11 +193,11 @@ public class QueryWrapperTests {
     @Test
     public void testUpdateSet(){
 
-        User user = new User();
+        MybatisDemo user = new MybatisDemo();
 
         user.setAge(99);
 
-        UpdateWrapper<User> updateWrapper = new UpdateWrapper<>();
+        UpdateWrapper<MybatisDemo> updateWrapper = new UpdateWrapper<>();
 
         updateWrapper.like("name","h")
                 .set("name","老李头")

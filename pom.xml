@@ -30,6 +30,11 @@
 			<scope>test</scope>
 		</dependency>
 
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
 		<!--mybatis-plus-->
 		<dependency>
 			<groupId>com.baomidou</groupId>
@@ -49,11 +54,11 @@
 			<artifactId>lombok</artifactId>
 		</dependency>
 
-		<dependency>
-			<groupId>com.github.thinwonton.mybatismetamodel</groupId>
-			<artifactId>mybatisplus</artifactId>
-			<version>1.0.0</version>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>com.github.thinwonton.mybatismetamodel</groupId>-->
+<!--			<artifactId>mybatisplus</artifactId>-->
+<!--			<version>1.0.0</version>-->
+<!--		</dependency>-->
 	</dependencies>
 
 	<build>
